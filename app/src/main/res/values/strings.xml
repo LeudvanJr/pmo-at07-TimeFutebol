@@ -1,0 +1,19 @@
+<resources>
+    <string name="time">Time</string>
+    <string name="app_name">Time de Futebol</string>
+    <string name="codigo">Código</string>
+    <string name="nome">Nome</string>
+    <string name="cidade">Cidade</string>
+
+    <string name="jogador">Jogador</string>
+    <string name="id">ID</string>
+    <string name="data_nasc">Data de Nascimento</string>
+    <string name="altura">Altura (m)</string>
+    <string name="peso">Peso (Kg)</string>
+
+    <string name="inserir">Inserir</string>
+    <string name="atualizar">Atualizar</string>
+    <string name="deletar">Remover</string>
+    <string name="encontrar">Encontrar</string>
+    <string name="listar">Listar Todos</string>
+</resources>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentJogador"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JogadorFragment">
+
+    <Button
+        android:id="@+id/btnAtualizarJog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/atualizar"
+        app:layout_constraintStart_toStartOf="@+id/spTime"
+        app:layout_constraintTop_toBottomOf="@+id/btnInserirJog" />
+
+    <Button
+        android:id="@+id/btnInserirJog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/inserir"
+        app:layout_constraintStart_toStartOf="@+id/spTime"
+        app:layout_constraintTop_toBottomOf="@+id/spTime" />
+
+    <Button
+        android:id="@+id/btnDeletarJog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/deletar"
+        app:layout_constraintEnd_toEndOf="@+id/spTime"
+        app:layout_constraintTop_toBottomOf="@+id/spTime" />
+
+    <Button
+        android:id="@+id/btnListarJog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/listar"
+        app:layout_constraintEnd_toEndOf="@+id/spTime"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeletarJog" />
+
+    <EditText
+        android:id="@+id/etID"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="@string/id"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/etNomeJogador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etDataNasc"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="@string/data_nasc"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/etNomeJogador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etNomeJogador"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="148dp"
+        android:ems="10"
+        android:hint="@string/nome"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etAltura"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/altura"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/spTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeJogador" />
+
+    <EditText
+        android:id="@+id/etPeso"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/peso"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/spTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeJogador" />
+
+    <Spinner
+        android:id="@+id/spTime"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="396dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvListaJog"
+        android:layout_width="394dp"
+        android:layout_height="187dp"
+        android:layout_marginBottom="4dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

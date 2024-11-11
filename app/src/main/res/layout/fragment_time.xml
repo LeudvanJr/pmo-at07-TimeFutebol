@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentTime"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeFragment">
+
+    <EditText
+        android:id="@+id/etCodigo"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:hint="@string/codigo"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/etNomeTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNomeTime"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:hint="@string/nome"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        app:layout_constraintBottom_toTopOf="@+id/etCidade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCodigo" />
+
+    <EditText
+        android:id="@+id/etCidade"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="431dp"
+        android:ems="10"
+        android:hint="@string/cidade"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeTime" />
+
+    <Button
+        android:id="@+id/btnEncontrarTim"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/encontrar"
+        app:layout_constraintBottom_toTopOf="@+id/etNomeTime"
+        app:layout_constraintEnd_toEndOf="@+id/etNomeTime" />
+
+    <Button
+        android:id="@+id/btnInserirTim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/inserir"
+        app:layout_constraintStart_toStartOf="@+id/etCidade"
+        app:layout_constraintTop_toBottomOf="@+id/etCidade" />
+
+    <Button
+        android:id="@+id/btnAtualizarTim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/atualizar"
+        app:layout_constraintStart_toStartOf="@+id/etCidade"
+        app:layout_constraintTop_toTopOf="@+id/btnInserirTim" />
+
+    <Button
+        android:id="@+id/btnDeletarTim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/deletar"
+        app:layout_constraintEnd_toEndOf="@+id/etCidade"
+        app:layout_constraintTop_toBottomOf="@+id/etCidade" />
+
+    <Button
+        android:id="@+id/btnListarTim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/listar"
+        app:layout_constraintEnd_toEndOf="@+id/etCidade"
+        app:layout_constraintTop_toTopOf="@+id/btnDeletarTim" />
+
+    <TextView
+        android:id="@+id/tvListarTim"
+        android:layout_width="395dp"
+        android:layout_height="226dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
