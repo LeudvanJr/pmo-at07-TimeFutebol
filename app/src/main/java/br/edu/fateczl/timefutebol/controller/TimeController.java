@@ -1,11 +1,9 @@
 package br.edu.fateczl.timefutebol.controller;
 
-import androidx.annotation.NonNull;
-
 import java.sql.SQLException;
 import java.util.List;
 
-import br.edu.fateczl.timefutebol.dao.TimeDao;
+import br.edu.fateczl.timefutebol.persistence.TimeDao;
 import br.edu.fateczl.timefutebol.model.Time;
 
 public class TimeController implements IController<Time> {

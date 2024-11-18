@@ -1,4 +1,4 @@
-package br.edu.fateczl.timefutebol.dao;
+package br.edu.fateczl.timefutebol.persistence;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;

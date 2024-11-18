@@ -1,4 +1,4 @@
-package br.edu.fateczl.timefutebol.dao;
+package br.edu.fateczl.timefutebol.persistence;
 
 import java.sql.SQLException;
 

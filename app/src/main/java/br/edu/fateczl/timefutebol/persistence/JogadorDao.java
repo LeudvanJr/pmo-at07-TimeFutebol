@@ -1,4 +1,4 @@
-package br.edu.fateczl.timefutebol.dao;
+package br.edu.fateczl.timefutebol.persistence;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -58,20 +58,24 @@ public class JogadorDao implements ICRUDDao<Jogador>, IJogadorDao {
     @SuppressLint("Range")
     @Override
     public Jogador findOne(Jogador jogador) throws SQLException {
-        String query = "SELECT j.id, j.nome, date(j.data_nasc) AS data_nasc," +
-                "j.altura, j.peso, t.codigo, t.nome, t.cidade" +
-                "FROM jogador j INNER JOIN time t ON j.cod_time = t.codigo" +
-                "WHERE id = " + jogador.getId();
+        String query = "SELECT j.id AS id, j.nome AS nome, date(j.data_nasc) AS data_nasc," +
+                "j.altura AS altura, j.peso AS peso, t.codigo AS codigoTime, " +
+                "t.nome AS nomeTime, t.cidade AS cidadeTime " +
+                "FROM jogador j, time t " +
+                "WHERE j.cod_time = t.codigo " +
+                "AND j.id=" + jogador.getId();
         Cursor cursor = database.rawQuery(query, null);
+        jogador = new Jogador();
 
         if(cursor != null)
             cursor.moveToFirst();
         if(!cursor.isAfterLast()){
             Time time = new Time();
-            time.setCodigo(cursor.getInt(cursor.getColumnIndex("codigo")));
-            time.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            time.setCidade(cursor.getString(cursor.getColumnIndex("cidade")));
+            time.setCodigo(cursor.getInt(cursor.getColumnIndex("codigoTime")));
+            time.setNome(cursor.getString(cursor.getColumnIndex("nomeTime")));
+            time.setCidade(cursor.getString(cursor.getColumnIndex("cidadeTime")));
 
+            jogador.setId(cursor.getInt(cursor.getColumnIndex("id")));
             jogador.setNome(cursor.getString(cursor.getColumnIndex("nome")));
             jogador.setDataNasc(LocalDate.parse(
                     cursor.getString(cursor.getColumnIndex("data_nasc"))
@@ -88,20 +92,23 @@ public class JogadorDao implements ICRUDDao<Jogador>, IJogadorDao {
     @Override
     public List<Jogador> findAll() throws SQLException {
         List<Jogador> jogadores = new ArrayList<>();
-        String query = "SELECT j.id, j.nome, date(j.data_nasc) AS data_nasc," +
-                "j.altura, j.peso, t.codigo, t.nome, t.cidade" +
-                "FROM jogador j INNER JOIN time t ON j.cod_time = t.codigo";
+        String query = "SELECT j.id AS id, j.nome AS nome, date(j.data_nasc) AS data_nasc," +
+                "j.altura AS altura, j.peso AS peso, t.codigo AS codigoTime, " +
+                "t.nome AS nomeTime, t.cidade AS cidadeTime " +
+                "FROM jogador j " +
+                "INNER JOIN time t " +
+                "ON j.cod_time = t.codigo";
         Cursor cursor = database.rawQuery(query, null);
-
         if(cursor != null)
             cursor.moveToFirst();
-        if(!cursor.isAfterLast()){
+        while(!cursor.isAfterLast()){
             Time time = new Time();
-            time.setCodigo(cursor.getInt(cursor.getColumnIndex("codigo")));
-            time.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-            time.setCidade(cursor.getString(cursor.getColumnIndex("cidade")));
+            time.setCodigo(cursor.getInt(cursor.getColumnIndex("codigoTime")));
+            time.setNome(cursor.getString(cursor.getColumnIndex("nomeTime")));
+            time.setCidade(cursor.getString(cursor.getColumnIndex("cidadeTime")));
 
             Jogador jogador = new Jogador();
+            jogador.setId(cursor.getInt(cursor.getColumnIndex("id")));
             jogador.setNome(cursor.getString(cursor.getColumnIndex("nome")));
             jogador.setDataNasc(LocalDate.parse(
                     cursor.getString(cursor.getColumnIndex("data_nasc"))
@@ -109,8 +116,8 @@ public class JogadorDao implements ICRUDDao<Jogador>, IJogadorDao {
             jogador.setAltura(cursor.getFloat(cursor.getColumnIndex("altura")));
             jogador.setPeso(cursor.getFloat(cursor.getColumnIndex("peso")));
             jogador.setTime(time);
-
             jogadores.add(jogador);
+            cursor.moveToNext();
         }
         cursor.close();
         return jogadores;

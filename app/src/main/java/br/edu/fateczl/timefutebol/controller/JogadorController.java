@@ -1,9 +1,10 @@
 package br.edu.fateczl.timefutebol.controller;
 
+
 import java.sql.SQLException;
 import java.util.List;
 
-import br.edu.fateczl.timefutebol.dao.JogadorDao;
+import br.edu.fateczl.timefutebol.persistence.JogadorDao;
 import br.edu.fateczl.timefutebol.model.Jogador;
 
 public class JogadorController implements IController<Jogador>{
